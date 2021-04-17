@@ -13,10 +13,13 @@
   --primary-white-color: #ffffff;
   --footer-text-links: rgba(255, 255, 255, 0.6);
   --title-bcg-color: #2f303a;
+  --hero-bcg-color: rgba(47, 48, 58, 0.4);
+  --hero-alt-color: #c4c4c4;
   --primary-bcg-color: #f5f4fa;
   --logo-primary-header: #000000;
   --header-border-color: #ececec;
   --projects-border-color: #eeeeee;
+  --clients-link-color: #afb1b8;
 }
 
 body {
@@ -87,10 +90,6 @@ body {
 .header .navig-address li:not(:last-child) {
   margin-right: 50px;
 }
-.header .navig-address a {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
 
 /* Logo */
 .logo {
@@ -145,17 +144,59 @@ body {
 .address-header:focus a {
   color: var(--accent-color);
 }
+.navig-address .address-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navig-address .address-mail {
+  fill: var(--primary-text-color);
+  width: 16px;
+  height: 12px;
+  margin-right: 10px;
+}
+.navig-address .address-phone {
+  fill: var(--primary-text-color);
+  width: 10px;
+  height: 16px;
+  margin-right: 10px;
+}
+.address-link:hover {
+  color: var(--accent-color);
+}
+.address-link:hover .address-mail,
+.address-link:hover .address-phone {
+  fill: var(--accent-color);
+}
 
 /* FOOTER */
 .footer-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
   padding-top: 60px;
   padding-bottom: 60px;
 
   background-color: var(--title-bcg-color);
+}
+.footer-container .container {
+  display: flex;
+}
+.footer-container .foot-main {
+  width: 231px;
+  margin-right: 70px;
+}
+.footer-container .join {
+  display: block;
+  padding-top: 12px;
+  margin: 0;
+}
+.join h3 {
+  margin: 0 auto;
+
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--primary-white-color);
 }
 .footer-container a {
   margin-bottom: 20px;
@@ -188,14 +229,51 @@ body {
   display: block;
   margin-bottom: 20px;
 }
+.foot-icons {
+  margin: 0 auto;
+  margin-top: 20px;
+  display: flex;
+
+  justify-content: space-between;
+}
+.foot-icons .foot-link {
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+.foot-icons .foot-svg {
+  fill: var(--primary-white-color);
+  width: 20px;
+  height: 20px;
+}
+.foot-link:hover {
+  background-color: var(--accent-color);
+}
+.foot-link:hover .foot-svg {
+  fill: var(--primary-white-color);
+}
 
 /* HERO */
 .hero-container {
   min-height: 600px;
+  max-width: 1600px;
   padding-top: 200px;
   text-align: center;
 
-  background-color: var(--title-bcg-color);
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/HERO.jpg);
+  background-color: var(--hero-alt-color);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .hero-slogan {
   width: 696px;
@@ -249,6 +327,20 @@ body {
 }
 .advantages .container li:not(:last-child) {
   margin-right: 30px;
+}
+.advantage-svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 270px;
+  height: 120px;
+  background-color: var(--primary-bcg-color);
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+.advantages svg {
+  width: 70px;
+  height: 70px;
 }
 .advantages h3 {
   margin-top: 0;
@@ -315,11 +407,15 @@ body {
   display: flex;
   justify-content: center;
 }
-.team-container .names li {
+.team-container .names-div {
   width: 270px;
   background-color: var(--primary-white-color);
 }
-.team-container .names li:not(:last-child) {
+.team-container .names-div {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.team-container .names-div:not(:last-child) {
   margin-right: 30px;
 }
 .names h3 {
@@ -347,10 +443,84 @@ body {
 .team-container .profession {
   padding-top: 30px;
   padding-bottom: 30px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+.team-icons {
+  margin: 0 auto;
+  margin-top: 16px;
+  display: flex;
+
+  justify-content: space-between;
+}
+.team-icons .team-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+.team-icons .team-svg {
+  fill: #afb1b8;
+  width: 20px;
+  height: 20px;
+}
+.team-link:hover {
+  background-color: var(--accent-color);
+}
+.team-link:hover .team-svg {
+  fill: var(--primary-white-color);
 }
 
-/* FILTER */
+/* CLIENTS */
+.clients {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.clients .list-no-style {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+}
+.clients .h2-web {
+  margin: 0 auto;
+  margin-bottom: 50px;
+  text-align: center;
+}
+.clients .container li {
+  display: flex;
+  width: 170px;
+  height: 92px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--clients-link-color);
+  border-radius: 4px;
+  cursor: pointer;
+}
 
+.clients .list-no-style li:not(:last-child) {
+  margin-right: 30px;
+}
+.clients .clients-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.clients .clients-svg {
+  fill: var(--clients-link-color);
+  width: 106px;
+  height: 60px;
+}
+.clients .container li:hover {
+  border-color: var(--accent-color);
+}
+.clients .container li:hover .clients-svg {
+  fill: var(--accent-color);
+}
+/* /CLIENTS */
+
+/* FILTER */
 .filter-button {
   font-weight: 500;
   font-size: 16px;
@@ -359,12 +529,15 @@ body {
   letter-spacing: 0.03em;
   color: var(--title-text-color);
   background-color: var(--primary-bcg-color);
+  cursor: pointer;
 }
 .filter-button:hover,
 .filter-button:focus,
 .filter-button:active {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 /* WORKS */
@@ -406,6 +579,10 @@ body {
   width: calc((100% - 60px) / 3);
   margin-right: 30px;
   margin-bottom: 30px;
+}
+.works .projects li:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .works .projects li:nth-child(3n) {
   margin-right: 0;
