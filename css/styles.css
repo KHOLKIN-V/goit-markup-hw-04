@@ -178,6 +178,7 @@ body {
 }
 .footer-container .container {
   display: flex;
+  align-items: baseline;
 }
 .footer-container .foot-main {
   width: 231px;
@@ -198,14 +199,11 @@ body {
   text-transform: uppercase;
   color: var(--primary-white-color);
 }
-.footer-container a {
-  margin-bottom: 20px;
-}
 .footer-container p {
   margin-top: 0;
   margin-bottom: 9px;
 }
-.footer-container li:not(:last-child) {
+.footer-container .foot-main li:not(:last-child) {
   margin-bottom: 9px;
 }
 .address-footer {
@@ -273,7 +271,7 @@ body {
   background-color: var(--hero-alt-color);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: auto;
 }
 .hero-slogan {
   width: 696px;
