@@ -199,6 +199,9 @@ body {
   text-transform: uppercase;
   color: var(--primary-white-color);
 }
+.join li:not(:last-child) {
+  margin-right: 10px;
+}
 .footer-container p {
   margin-top: 0;
   margin-bottom: 9px;
@@ -239,7 +242,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 10px;
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -262,6 +264,7 @@ body {
   max-width: 1600px;
   padding-top: 200px;
   text-align: center;
+  margin: 0 auto;
 
   background-image: linear-gradient(
       rgba(47, 48, 58, 0.4),
@@ -507,8 +510,9 @@ body {
 }
 .clients .clients-svg {
   fill: var(--clients-link-color);
-  width: 106px;
-  height: 60px;
+  width: 170px;
+  height: 92px;
+  padding: 16px 32px;
 }
 .clients .container li:hover {
   border-color: var(--accent-color);
