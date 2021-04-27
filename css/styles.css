@@ -181,12 +181,10 @@ body {
   align-items: baseline;
 }
 .footer-container .foot-main {
-  width: 231px;
   margin-right: 70px;
 }
 .footer-container .join {
   display: block;
-  padding-top: 12px;
   margin: 0;
 }
 .join h3 {
